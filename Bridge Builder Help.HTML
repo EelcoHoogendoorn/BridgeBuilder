@@ -1,0 +1,266 @@
+<!DOCTYPE ????>
+
+<HTML>
+
+<HEAD>
+<TITLE>Bridge Builder Help</TITLE>
+<META NAME="Description" CONTENT="Help document to describe Bridge Builder controls and concepts">
+<META NAME="Keywords" CONTENT="Bridge Builder Controls Blitz Basic Physics Simulation Train Structure">
+<META NAME="Author" CONTENT="Paul Fuller">
+</HEAD>
+
+<BODY BGCOLOR="#90B090">
+<FONT SIZE=4 COLOR="000000">
+
+<H1>Bridge Builder Help</H1>
+
+<H2>Introduction</H2>
+<P>
+Bridge Builder is a program that allows you to build structures and then test them to destruction for fun and
+enlightenment.
+There are a number of pre-set challenges and a free-form construction mode in which you can build whatever you wish
+to within the limits of our materials and your imagination.</P>
+<TABLE BGCOLOR="#A0B8A0" BORDER=2 CELLPADDING=0>
+  <TR>
+    <TD> <IMG src="Images\Screen01.PNG"> </TD>
+    <TD> <IMG src="Images\Screen02.PNG"> </TD>
+    <TD> <IMG src="Images\Images - Toolbox.PNG"> </TD>
+  </TR>
+  <TR>
+    <TD>The Big Picture</TD>
+    <TD>Zoom in for a Stretch</TD>
+    <TD>The new Toolbox</TD>
+  </TR>
+</TABLE>
+
+<H2>General Controls</H2>
+<P>
+These controls allow you to switch modes:</P>
+<TABLE BGCOLOR="#A0B8A0" BORDER=1 CELLPADDING=1>
+  <TR> <TH>Key</TH>	<TH>Icon</TH>					<TH>Function</TH> </TR>
+  <TR> <TD>Space</TD>	<TD>&nbsp;</TD>					<TD>Start/Stop test</TD> </TR>
+  <TR> <TD>Q</TD>	<TD><IMG src="Images\Tool - Quit.PNG"></TD>	<TD>Quit</TD> </TR>
+  <TR> <TD>Ln</TD>	<TD><IMG src="Images\Tool - Load.PNG"></TD>	<TD>Load bridge from slot ‘n’</TD> </TR>
+  <TR> <TD>Sn</TD>	<TD><IMG src="Images\Tool - Save.PNG"></TD>	<TD>Save bridge to slot ‘n’</TD> </TR>
+  <TR> <TD>Esc</TD>	<TD>&nbsp;</TD>					<TD>Cancel (in the midst of some operations)</TD> </TR>
+</TABLE>
+<P>
+(Note: Load/Save invoke a dialog but still allow a shortcut ‘n’ to file slots 0-9)</P>
+
+<H2>Edit Mode</H2>
+<P>
+Edit mode allows you to create your structure by selecting materials, positioning <U>Segments</U> that
+are connected at <U>Bolts</U> and using a variety of tools and macros.  Save your structure to disk or load previously
+saved structures.</P>
+<P>
+There are a number elements displayed in Edit mode</P>
+
+
+<H3>Display</H3>
+<P>The display shows the landscape of the Bridge Builder world.  In Edit mode there is a grid and toolbox - both
+of which can be turned on or off.  The Toolbox can be re-positioned by dragging it by the title bar.</P>
+
+<H3>Zooming the Display</H3>
+<P>The display can zoom in and out to show either the big picture or more detail for fine work.  The Grid will show at
+various levels right down to the smallest construction unit.</P>
+
+<H2>General View Controls</H2>
+<TABLE BGCOLOR="#A0B8A0" BORDER=1 CELLPADDING=1>
+  <TR> <TH>Home</TH>		<TD>Reset Zoom and Pan to ‘full’ view</TD> </TR>
+  <TR> <TH>End</TH>			<TD>Zoom and Pan to selected segments</TD> </TR>
+  <TR> <TH>Page Up</TH>		<TD>Zoom out (Shrink)</TD> </TR>
+  <TR> <TH>Page Down</TH>	<TD>Zoom in (Magnify)</TD> </TR>
+  <TR> <TH>Mouse Wheel</TH>	<TD>Forwards – Zoom in, Backwards – Zoom out</TD> </TR>
+  <TR> <TH>Left Arrow</TH>	<TD>Pan left</TD> </TR>
+  <TR> <TH>Right Arrow</TH>	<TD>Pan right</TD> </TR>
+  <TR> <TH>Up Arrow</TH>	<TD>Pan up</TD> </TR>
+  <TR> <TH>Down Arrow</TH>	<TD>Pan down</TD> </TR>
+  <TR> <TH>Cursor at edges</TH>	<TD>Pan in that direction – Slowly near the edge, Quickly at the edge</TD> </TR>
+</TABLE>
+
+<H2>Edit Controls</H2>
+<UL>
+<LI>Single Click	Select nearest Segment or Bolt (and attached Segments)
+<LI>Drag Box (left)	Selection box of Bolts and Segments (if either Bolt is selected)
+<LI>Drag Box (right)	Selection box of Bolts and Segments (if both Bolts are selected)
+<LI>Control Selection	Extend selection
+<LI>Alt Selection		Group selection
+<BR>
+<LI>Del	Delete selection of Bolts and Segments
+	(Note: Bolts are only deleted if there are no connected Segments)
+<LI>C	Copy selection to cursor
+	(Note: Bolts with the same position are merged)
+<LI>V	Move selection to cursor
+<LI>B	Stretch selection to cursor
+<LI>O	Place copy/move 
+<LI>X	Flip selection horizontally
+<LI>Y	Flip selection vertically
+<BR>
+<LI>M	Cycle through materials: Wood, Steel, Concrete, Cable etc
+<LI>.	Toggle Grid display
+<LI>Tab	Toggle tool panel On/Off (in Edit mode only)
+</UL>
+
+<H2>Tool Icons</H2>
+<UL>
+<LI>Select	Click to select a single Bolt or Segment.  Click and drag to select using a rectangular marquee.
+Drag box Left to select segments with either Bolt in rectangle (Green marquee).  Drag box Right to select only
+Segments with both Bolts in the rectanlge (Red marquee).  Hold down [Ctrl] and make further selections to extend selection.
+[Alt]-Select to select a group of Segments placed by a single Copy/Move/Stretch or macro operation.
+<LI>Copy
+<LI>Move
+<LI>Stretch
+<LI>Build	Build a single segment.  Click on the starting point and drag to build a segment in the current primary material.
+Attaches to nearby bolt if one exists.  As you move the endpoint, the line will be Green if you can validly place
+the endpoint there or Red if you cannot.  Reasons for why you cannot place an endpoint
+- It would make the Segment longer than is allowed for that material.
+- The endpoint would be placed in an exclusion region
+<LI>Build Multiple	Build a segment and start a new one until cancelled (Esc or other selection)
+<LI>Group
+<LI>Replace
+<LI>Line	Build a line of one or more segments to connect two points
+<LI>Beam	Build a straight truss structure between the selection points
+<LI>Arch	Build a parabolic truss structure within the selection box 
+<LI>Circle	Build a circular truss structure with centre and radius according to the selection points
+</UL>
+
+<H2>Load/Save Dialog Controls</H2>
+<UL>
+<LI>n	Hotkey select slot 'n'.  Ie. Slot0 - Slot9
+<LI>Left Click	Select a slot to load/save
+<LI>Page Down	Page down through file slots
+<LI>Page Up	Page up through file slots
+<LI>Home	Show first page of file slots
+<LI>End		Show last page of file slots
+</UL>
+
+<H2>Test Controls</H2>
+<UL>
+<LI>T	Start/Stop train
+<LI>V	Toggle Stress/Material display
+<LI>,	Toggle StressGraph collection and display
+<LI>. Grid toggle
+<LI>0	Pause simulation
+<LI>1	Single step simulation
+</UL>
+
+<H2>Debugging Controls</H2>
+<UL>
+<LI>F1	Enter debug line trace
+<LI>F2	Test DialogBox()
+<LI>Left Shift	Bypass drawing (except for CLS and time display) to monitor performance
+</UL>
+
+<H2>Materials</H2>
+
+<TABLE BGCOLOR="#A0B8A0" BORDER=2>
+
+<TR>
+<TH>Material
+<TH>Image
+<TH>Properties
+<TH>Description
+</TR>
+
+<TR>
+<TD>Wood Beam</TD>
+<TD> <IMG src="Images\Material - Wood Beam.PNG"> </TD>
+<TD>
+	<TABLE>
+	  <TR> <TD>Weight</TD>				<TD>10</TD> </TR>
+	  <TR> <TD>f<SUB>Tens</SUB> </TD>	<TD>5</TD> </TR>
+	  <TR> <TD>f<SUB>Comp</SUB> </TD>	<TD>6</TD> </TR>
+	  <TR> <TD>Cost</TD>				<TD>2</TD> </TR>
+	</TABLE>
+</TD>
+<TD>Wood is light and strong for its weight but not able to carry large loads.  Used for relatively small structures
+or for low load bearing areas in more ambitious structures</TD>
+</TR>
+
+<TR>
+<TD>Steel Beam</TD>
+<TD> <IMG src="Images\Material - Steel Beam.PNG"> </TD>
+<TD>
+	<TABLE>
+	  <TR> <TD>Weight</TD>				<TD>100</TD> </TR>
+	  <TR> <TD>f<SUB>Tens</SUB> </TD>	<TD>800</TD> </TR>
+	  <TR> <TD>f<SUB>Comp</SUB> </TD>	<TD>1250</TD> </TR>
+	  <TR> <TD>Cost</TD>				<TD>50</TD> </TR>
+	</TABLE>
+</TD>
+<TD>Steel is a strong and versatile material the introduction of which revolutionised construction from the 18th
+Century.  It remains a primary construction material in general use and is often the main load bearing material where
+primarily tension or mixed tension/compression forces must be withstood.</TD>
+</TR>
+<TR>
+<TD>Concrete Beam</TD>
+<TD> <IMG src="Images\Material - Concrete Beam.PNG"> </TD>
+<TD>
+	<TABLE>
+	  <TR> <TD>Weight</TD>				<TD>600</TD> </TR>
+	  <TR> <TD>f<SUB>Tens</SUB> </TD>	<TD>450</TD> </TR>
+	  <TR> <TD>f<SUB>Comp</SUB> </TD>	<TD>4380</TD> </TR>
+	  <TR> <TD>Cost</TD>				<TD>200</TD> </TR>
+	</TABLE>
+</TD>
+<TD>By combinding the strength in compression of cement (which was known to the ancients) and embedded re-inforcing
+rods of mild steel composition to resist tension forces, Concrete achieves an extremely useful balance of properties
+and has become one of the most commonly used materials in modern construction.  It is not well suited to primarily
+tensile loads and also has a high unit weight making selective placement the key to successful use.</TD>
+</TR>
+
+<TR>
+<TD>Steel Cable</TD>
+<TD> <IMG src="Images\Material - Steel Cable.PNG"> </TD>
+<TD>
+	<TABLE>
+	  <TR> <TD>Weight</TD>				<TD>20</TD> </TR>
+	  <TR> <TD>f<SUB>Tens</SUB> </TD>	<TD>600</TD> </TR>
+	  <TR> <TD>f<SUB>Comp</SUB> </TD>	<TD>0</TD> </TR>
+	  <TR> <TD>Cost</TD>				<TD>150</TD> </TR>
+	</TABLE>
+</TD>
+<TD>Mild steel wires spun into multi-stranded cables revolutionised bridge building in the early 20th Century.  With almost
+no strength in compression but with unmatched tensile strength and previously unheard of strength to weight ratios,
+Steel Cables liberated designers from the massive structural designs that had previously been necessary.  Steel Cables
+find a variety of uses beyond the most obvious application in suspension bridges.</TD>
+</TR>
+
+<TR>
+<TD>Boron Monofilament</TD>
+<TD> <IMG src="Images\Boron Monofilament.PNG"> </TD>
+<TD>
+	<TABLE>
+	  <TR> <TD>Weight</TD>				<TD>10</TD> </TR>
+	  <TR> <TD>f<SUB>Tens</SUB> </TD>	<TD>5000</TD> </TR>
+	  <TR> <TD>f<SUB>Comp</SUB> </TD>	<TD>0</TD> </TR>
+	  <TR> <TD>Cost</TD>				<TD>600</TD> </TR>
+	</TABLE>
+</TD>
+<TD>Boron Monafilament Cables or more correctly Boron-Boron composite tensile materials became available in the early 21st
+Century and heralded the beginning of a new golden age of structural engineering.  While slightly less extraordinary than
+Carbon-Carbon composites, Boron Monofilaments have proven to be entirely more practical to manufacture and deploy in real-world
+applications.  Their very high cost however means that they are still only used when truly exceptional properties are
+called for and no other material will do.</TD>
+</TR>
+
+</TABLE>
+
+<H2>Credits</H2>
+
+<H3>Version 1</H3>
+<P>Concept and implementation by <U>Eelco Hoogendoorn</U>.</P>
+
+<H3>Version 2</H3>
+<P>Updated physics engine by <U>Eelco Hoogendoorn</U>.</P>
+<P>User Interface by <U>Paul Fuller</U>.</P>
+
+<H3>Tools</H3>
+<P>Written in <FONT SIZE=4 COLOR=NAVY>Blitz Basic 2D <FONT SIZE=3 COLOR=BLACK>V1.80.</P>
+<P>Icon graphics created in <FONT SIZE=4 COLOR=NAVY>POV-Ray<FONT SIZE=3 COLOR=BLACK> V3.5.</P>
+
+<H2>Copyright</H2>
+<P>Copyright &copy 2003 Eelco Hoogendoorn & Paul Fuller.</P>
+
+</BODY>
+</HTML>
